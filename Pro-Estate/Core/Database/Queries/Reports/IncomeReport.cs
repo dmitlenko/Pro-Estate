@@ -16,6 +16,8 @@ namespace Pro_Estate.Core.Database.Queries.Reports
 		public override string Description { get => "Звіт надає список всіх грошових операцій за весь час."; }
 		public override bool Editable { get => false; }
 
+		public override AccountLevel MinViewLevel => AccountLevel.Employee;
+
 		private class ResultRow
 		{
 			public Customer Customer { get; set; }
