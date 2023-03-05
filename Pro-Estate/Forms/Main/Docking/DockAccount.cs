@@ -35,7 +35,7 @@ namespace Pro_Estate.Forms.Main.Docking
 					profilePicture.Image = Properties.Resources.img_employee;
 					break;
 
-				case AccountLevel.Lessee:
+				case AccountLevel.Lessor:
 					profilePicture.Image = Properties.Resources.img_lessee;
 					break;
 

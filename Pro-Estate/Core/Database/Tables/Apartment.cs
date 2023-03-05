@@ -15,7 +15,7 @@ namespace Pro_Estate.Core.Database.Tables
 	[Table(Name = "Apartment")]
 	public class Apartment : IIdentifable
 	{
-		private EntityRef<Lessee> _lessee = new EntityRef<Lessee>();
+		private EntityRef<Lessor> _lessee = new EntityRef<Lessor>();
 
 		[Column(IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
 		public int Id { get; set; }
@@ -36,7 +36,7 @@ namespace Pro_Estate.Core.Database.Tables
 		public DateTime DateAdded { get; set; } = DateTime.Now;
 
 		[Association(Name = "FK_Apartment_Lessee", IsForeignKey = true, ThisKey = "LesseeId", OtherKey = "Id", Storage = "_lessee")]
-		public Lessee Lessee { get => _lessee.Entity; set => _lessee.Entity = value; }
+		public Lessor Lessee { get => _lessee.Entity; set => _lessee.Entity = value; }
 
 		[Column(CanBeNull = false)]
 		public bool IsResidential { get; set; }

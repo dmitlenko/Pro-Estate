@@ -7,7 +7,7 @@ namespace Pro_Estate.Core.Database
 	{
 		public Table<Apartment> Apartments;
 		public Table<Customer> Customers;
-		public Table<Lessee> Lessees;
+		public Table<Lessor> Lessees;
 		public Table<Rent> Rents;
 		public Table<Sell> Sells;
 		public Table<Requirement> Requirements;

@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Pro_Estate.Core.Database.Queries.Tables
 {
-	public class LessorsTable : ATableQuery<Lessee>
+	public class LessorsTable : ATableQuery<Lessor>
 	{
 		public override Bitmap Icon { get => Properties.Resources.user_suit; }
 		public override string Name { get => "Орендодавці"; }
@@ -19,17 +19,17 @@ namespace Pro_Estate.Core.Database.Queries.Tables
 		public override AccountLevel MinCreateLevel => AccountLevel.Admin;
 		public override AccountLevel MinDeleteLevel => AccountLevel.Admin;
 
-		public override Table<Lessee> Table => Database.Lessees;
+		public override Table<Lessor> Table => Database.Lessees;
 
-		private IQueryable<Lessee> GetValues()
+		private IQueryable<Lessor> GetValues()
 		{
 			return from a in Database.Lessees select a;
 		}
 
-		public override QueryResult<Lessee> FetchResult()
+		public override QueryResult<Lessor> FetchResult()
 		{
 			var values = GetValues();
-			return new QueryResult<Lessee>(DatabaseHelper.LINQResultToDataTable(values), values, this);
+			return new QueryResult<Lessor>(DatabaseHelper.LINQResultToDataTable(values), values, this);
 		}
 	}
 }

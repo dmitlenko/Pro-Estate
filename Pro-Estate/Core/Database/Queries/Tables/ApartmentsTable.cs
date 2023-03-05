@@ -19,7 +19,7 @@ namespace Pro_Estate.Core.Database.Queries.Tables
 
 		public override AccountLevel MinViewLevel => AccountLevel.Customer;
 		public override AccountLevel MinEditLevel => AccountLevel.Employee;
-		public override AccountLevel MinCreateLevel => AccountLevel.Lessee;
+		public override AccountLevel MinCreateLevel => AccountLevel.Lessor;
 
 		private IQueryable<Apartment> GetValues()
 		{

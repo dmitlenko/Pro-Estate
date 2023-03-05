@@ -52,7 +52,7 @@ namespace Pro_Estate.Forms.DataEntry.Controls
 
 		public T GetValue()
 		{
-			Value.Lessee = lessee.SelectedItem as Lessee;
+			Value.Lessee = lessee.SelectedItem as Lessor;
 			Value.Name = name.Text;
 			Value.Price = (double)price.Value;
 			Value.Square = (double)square.Value;

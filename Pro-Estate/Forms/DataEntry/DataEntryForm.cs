@@ -55,8 +55,8 @@ namespace Pro_Estate.Forms.DataEntry
 					Text = "працівника";
 					break;
 
-				case Lessee item:
-					EntryFields = new HumanEntry<Lessee>(Database, item);
+				case Lessor item:
+					EntryFields = new HumanEntry<Lessor>(Database, item);
 					Text = "орендаря";
 					break;
 

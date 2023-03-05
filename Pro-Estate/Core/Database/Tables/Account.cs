@@ -54,7 +54,7 @@ namespace Pro_Estate.Core.Database.Tables
 						return AccountLevel.Customer;
 
 					case 2:
-						return AccountLevel.Lessee;
+						return AccountLevel.Lessor;
 
 					case 3:
 						return AccountLevel.Employee;
@@ -73,7 +73,7 @@ namespace Pro_Estate.Core.Database.Tables
 	{
 		None = 0,
 		Customer = 1,
-		Lessee = 2,
+		Lessor = 2,
 		Employee = 3,
 		Admin = 4
 	}
