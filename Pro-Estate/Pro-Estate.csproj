@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57272C4A-0076-4B2C-BC3C-6C135AC27304}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Pro_Estate</RootNamespace>
+    <AssemblyName>Pro-Estate</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>building.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>722249476A3FD580728925BC939965BA7930DCC0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Pro-Estate_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ReaLTaiizor, Version=3.7.9.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReaLTaiizor.3.7.9.2\lib\net48\ReaLTaiizor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Core\Database\Base\IHumanData.cs" />
+    <Compile Include="Core\Database\Base\IIdentifable.cs" />
+    <Compile Include="Core\Database\Queries\Queries.cs" />
+    <Compile Include="Core\Database\Base\QueryResult.cs" />
+    <Compile Include="Core\Database\Base\AReportQuery.cs" />
+    <Compile Include="Core\Database\ProEstateDatabase.cs" />
+    <Compile Include="Core\Database\Queries\Reports\IncomeReport.cs" />
+    <Compile Include="Core\Database\Queries\Reports\MonthlyIncomeReport.cs" />
+    <Compile Include="Core\Database\Queries\Reports\RequirementsReport.cs" />
+    <Compile Include="Core\Database\Queries\Reports\MonthlySellsReport.cs" />
+    <Compile Include="Core\Database\Base\ABaseScript.cs" />
+    <Compile Include="Core\Database\Base\ATableQuery.cs" />
+    <Compile Include="Core\Database\Queries\Scripts\PeriodSellsReportScript.cs" />
+    <Compile Include="Core\Database\Queries\Scripts\LesseeReportScript.cs" />
+    <Compile Include="Core\Database\Queries\Scripts\CustomerReportScript.cs" />
+    <Compile Include="Core\Database\Queries\Tables\EmployeesTable.cs" />
+    <Compile Include="Core\Database\Queries\Tables\AccountsTable.cs" />
+    <Compile Include="Core\Database\Tables\Account.cs" />
+    <Compile Include="Core\Database\Tables\Employee.cs" />
+    <Compile Include="Core\Database\Queries\Tables\SellsTable.cs" />
+    <Compile Include="Core\Database\Queries\Tables\RequirementsTable.cs" />
+    <Compile Include="Core\Database\Queries\Tables\RentsTable.cs" />
+    <Compile Include="Core\Database\Queries\Tables\LessorsTable.cs" />
+    <Compile Include="Core\Database\Queries\Tables\CustomersTable.cs" />
+    <Compile Include="Core\Database\Queries\Tables\ApartmentsTable.cs" />
+    <Compile Include="Core\Database\Base\ABaseQuery.cs" />
+    <Compile Include="Core\Database\Tables\Apartment.cs" />
+    <Compile Include="Core\Database\Tables\Customer.cs" />
+    <Compile Include="Core\Database\Tables\PassportData.cs" />
+    <Compile Include="Core\Database\Tables\Requirement.cs" />
+    <Compile Include="Core\Database\Tables\Lessee.cs" />
+    <Compile Include="Core\Database\Tables\Rent.cs" />
+    <Compile Include="Core\Database\Tables\Sell.cs" />
+    <Compile Include="Core\Helpers\CheckHelper.cs" />
+    <Compile Include="Core\Helpers\DatabaseHelper.cs" />
+    <Compile Include="Core\Helpers\HTMLHelper.cs" />
+    <Compile Include="Core\Helpers\ScriptHelper.cs" />
+    <Compile Include="Forms\AuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AuthForm.Designer.cs">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\SellEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\SellEntry.Designer.cs">
+      <DependentUpon>SellEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\RentEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\RentEntry.Designer.cs">
+      <DependentUpon>RentEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\ApartmentEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\ApartmentEntry.Designer.cs">
+      <DependentUpon>ApartmentEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\RequirementEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\RequirementEntry.Designer.cs">
+      <DependentUpon>RequirementEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\HumanEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\HumanEntry.Designer.cs">
+      <DependentUpon>HumanEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\AccountEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DataEntry\Controls\AccountEntry.Designer.cs">
+      <DependentUpon>AccountEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Database\Base\IEntryData.cs" />
+    <Compile Include="Forms\DataEntry\DataEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataEntry\DataEntryForm.Designer.cs">
+      <DependentUpon>DataEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockAccount.Designer.cs">
+      <DependentUpon>DockAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockScript.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockScript.Designer.cs">
+      <DependentUpon>DockScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Screens\ExceptionScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Screens\ExceptionScreen.Designer.cs">
+      <DependentUpon>ExceptionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockBrowser.Designer.cs">
+      <DependentUpon>DockBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockTable.Designer.cs">
+      <DependentUpon>DockTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockActions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockActions.Designer.cs">
+      <DependentUpon>DockActions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Screens\LoadScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Screens\LoadScreen.Designer.cs">
+      <DependentUpon>LoadScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\DatabaseWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\DatabaseWizard.Designer.cs">
+      <DependentUpon>DatabaseWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AuthForm.resx">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataEntry\Controls\SellEntry.resx">
+      <DependentUpon>SellEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataEntry\Controls\RentEntry.resx">
+      <DependentUpon>RentEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataEntry\Controls\ApartmentEntry.resx">
+      <DependentUpon>ApartmentEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataEntry\Controls\RequirementEntry.resx">
+      <DependentUpon>RequirementEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataEntry\Controls\HumanEntry.resx">
+      <DependentUpon>HumanEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataEntry\Controls\AccountEntry.resx">
+      <DependentUpon>AccountEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataEntry\DataEntryForm.resx">
+      <DependentUpon>DataEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Docking\DockAccount.resx">
+      <DependentUpon>DockAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Docking\DockScript.resx">
+      <DependentUpon>DockScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Screens\ExceptionScreen.resx">
+      <DependentUpon>ExceptionScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Docking\DockBrowser.resx">
+      <DependentUpon>DockBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Docking\DockTable.resx">
+      <DependentUpon>DockTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Docking\DockActions.resx">
+      <DependentUpon>DockActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Screens\LoadScreen.resx">
+      <DependentUpon>LoadScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\DatabaseWizard.resx">
+      <DependentUpon>DatabaseWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Pro-Estate_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pro-estate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="building.ico" />
+    <None Include="Resources\time.png" />
+    <None Include="Resources\building_go.png" />
+    <None Include="Resources\client_account_template.png" />
+    <None Include="Resources\pro_estate_body_empty.html" />
+    <None Include="Resources\money_bag.png" />
+    <None Include="Resources\table_add.ico" />
+    <None Include="Resources\pro-estate-building.png" />
+    <None Include="Resources\arrow_refresh.png" />
+    <None Include="Resources\user_orange.png" />
+    <None Include="Resources\script_yellow.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\diskette.png" />
+    <None Include="Resources\pro_estate_report_head.html" />
+    <None Include="Resources\pro_estate_report_body.html" />
+    <None Include="Resources\report_green.png" />
+    <None Include="Resources\img_lessee.png" />
+    <None Include="Resources\img_employee.png" />
+    <None Include="Resources\img_customer.png" />
+    <None Include="Resources\img_admin.png" />
+    <None Include="Resources\email_authentication.png" />
+    <None Include="Resources\user_green.png" />
+    <None Include="Resources\folder_vertical_open.png" />
+    <None Include="Resources\building_key.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\new_data.png" />
+    <None Include="Resources\query_wizard.png" />
+    <None Include="Resources\pro_estate_greeting.html" />
+    <None Include="Resources\safari_browser.png" />
+    <None Include="Resources\domain_buying_selling.png" />
+    <None Include="Resources\text_list_bullets.png" />
+    <None Include="Resources\user_suit.png" />
+    <None Include="Resources\users_5.png" />
+    <None Include="Resources\building.png" />
+    <None Include="Resources\query_design.png" />
+    <None Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
