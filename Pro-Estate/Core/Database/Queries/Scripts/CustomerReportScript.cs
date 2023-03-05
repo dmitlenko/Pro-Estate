@@ -31,7 +31,7 @@ namespace Pro_Estate.Core.Database.Queries.Scripts
 			"орендатором або працівником. Можна вибирати одночасно.";
 
 		public override Bitmap Icon => Properties.Resources.client_account_template;
-		public override AccountLevel MinEditLevel => AccountLevel.Employee;
+		public override AccountLevel MinViewLevel => AccountLevel.Employee;
 		public override ControlCollection Controls { get => _collection; set => _collection = value; }
 
 		public override void Prepare()

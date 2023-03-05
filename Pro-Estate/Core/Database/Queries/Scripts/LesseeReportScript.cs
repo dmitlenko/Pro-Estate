@@ -27,7 +27,7 @@ namespace Pro_Estate.Core.Database.Queries.Scripts
 		public override string Description => "Цей запит надає список всіх орендарів за наданим приміщенням.";
 
 		public override Bitmap Icon => Properties.Resources.building_go;
-		public override AccountLevel MinEditLevel => AccountLevel.Employee;
+		public override AccountLevel MinViewLevel => AccountLevel.Employee;
 		public override ControlCollection Controls { get => _collection; set => _collection = value; }
 
 		public override void Prepare()

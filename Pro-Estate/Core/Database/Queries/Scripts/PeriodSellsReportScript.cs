@@ -29,7 +29,7 @@ namespace Pro_Estate.Core.Database.Queries.Scripts
 		public override string Description => "Цей запит надає список всіх продажів за певний період часу.";
 
 		public override Bitmap Icon => Properties.Resources.time;
-		public override AccountLevel MinEditLevel => AccountLevel.Employee;
+		public override AccountLevel MinViewLevel => AccountLevel.Employee;
 		public override ControlCollection Controls { get => _collection; set => _collection = value; }
 
 		public override void Prepare()
