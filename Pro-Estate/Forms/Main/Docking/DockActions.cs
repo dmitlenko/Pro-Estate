@@ -88,8 +88,8 @@ namespace Pro_Estate.Forms.Main.Docking
 						crownDocument = new DockTable<Employee>(table, AccountLevel);
 						break;
 
-					case ATableQuery<Lessee> table:
-						crownDocument = new DockTable<Lessee>(table, AccountLevel);
+					case ATableQuery<Lessor> table:
+						crownDocument = new DockTable<Lessor>(table, AccountLevel);
 						break;
 
 					case ATableQuery<PassportData> table:

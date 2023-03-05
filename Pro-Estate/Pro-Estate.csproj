@@ -118,7 +118,7 @@
     <Compile Include="Core\Database\Tables\Customer.cs" />
     <Compile Include="Core\Database\Tables\PassportData.cs" />
     <Compile Include="Core\Database\Tables\Requirement.cs" />
-    <Compile Include="Core\Database\Tables\Lessee.cs" />
+    <Compile Include="Core\Database\Tables\Lessor.cs" />
     <Compile Include="Core\Database\Tables\Rent.cs" />
     <Compile Include="Core\Database\Tables\Sell.cs" />
     <Compile Include="Core\Helpers\CheckHelper.cs" />
