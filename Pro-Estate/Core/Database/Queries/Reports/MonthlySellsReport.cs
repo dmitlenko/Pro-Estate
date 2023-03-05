@@ -16,6 +16,7 @@ namespace Pro_Estate.Core.Database.Queries.Reports
 		public override string Description { get => "Звіт надає про всі продажі які були зроблені за останній місяць."; }
 		public override bool Editable { get => false; }
 
+		public override AccountLevel MinViewLevel => AccountLevel.Employee;
 		private class ResultRow
 		{
 			public Customer Customer { get; set; }
