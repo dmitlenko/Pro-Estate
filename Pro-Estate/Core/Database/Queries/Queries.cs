@@ -17,6 +17,7 @@ namespace Pro_Estate.Core.Database.Queries
 				new MonthlyIncomeReport { Database = database },
 				new RequirementsReport { Database = database },
 				new IncomeReport { Database = database },
+				new ApartmentsReport { Database = database },
 			}.OrderBy(x => x.Name));
 		}
 

@@ -96,6 +96,7 @@
     <Compile Include="Core\Database\ProEstateDatabase.cs" />
     <Compile Include="Core\Database\Queries\Reports\IncomeReport.cs" />
     <Compile Include="Core\Database\Queries\Reports\MonthlyIncomeReport.cs" />
+    <Compile Include="Core\Database\Queries\Reports\ApartmentsReport.cs" />
     <Compile Include="Core\Database\Queries\Reports\RequirementsReport.cs" />
     <Compile Include="Core\Database\Queries\Reports\MonthlySellsReport.cs" />
     <Compile Include="Core\Database\Base\ABaseScript.cs" />
