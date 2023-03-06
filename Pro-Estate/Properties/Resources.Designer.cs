@@ -450,6 +450,16 @@ namespace Pro_Estate.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap to_do_list {
+            get {
+                object obj = ResourceManager.GetObject("to_do_list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap user_green {
             get {
                 object obj = ResourceManager.GetObject("user_green", resourceCulture);
