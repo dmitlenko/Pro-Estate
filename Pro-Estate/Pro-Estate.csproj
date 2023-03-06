@@ -100,6 +100,7 @@
     <Compile Include="Core\Database\Queries\Reports\MonthlySellsReport.cs" />
     <Compile Include="Core\Database\Base\ABaseScript.cs" />
     <Compile Include="Core\Database\Base\ATableQuery.cs" />
+    <Compile Include="Core\Database\Queries\Scripts\LessorRegisterScript.cs" />
     <Compile Include="Core\Database\Queries\Scripts\CustomerRegisterScript.cs" />
     <Compile Include="Core\Database\Queries\Scripts\CustomerRequirementScript.cs" />
     <Compile Include="Core\Database\Queries\Scripts\PeriodSellsReportScript.cs" />
@@ -325,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="building.ico" />
+    <None Include="Resources\user_suit_add.png" />
     <None Include="Resources\user_add.png" />
     <None Include="Resources\to_do_list.png" />
     <None Include="Resources\time.png" />
