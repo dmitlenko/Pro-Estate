@@ -41,12 +41,8 @@
 			this.showGreetingTab = new System.Windows.Forms.ToolStripMenuItem();
 			this.проПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.adminMenu = new System.Windows.Forms.ToolStripMenuItem();
-			this.adminPanelItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.adminDatabaseItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.createNewDB = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-			this.connectDatabase = new System.Windows.Forms.ToolStripMenuItem();
-			this.disconnectDatabase = new System.Windows.Forms.ToolStripMenuItem();
 			this.crownContextMenuStrip1 = new ReaLTaiizor.Controls.CrownContextMenuStrip();
 			this.DockPanel = new ReaLTaiizor.Docking.Crown.CrownDockPanel();
 			this.stausStrip.SuspendLayout();
@@ -181,32 +177,20 @@
 			// 
 			this.adminMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
 			this.adminMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminPanelItem,
             this.adminDatabaseItem});
 			this.adminMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.adminMenu.Name = "adminMenu";
 			this.adminMenu.Size = new System.Drawing.Size(111, 20);
 			this.adminMenu.Text = "Адміністрування";
 			// 
-			// adminPanelItem
-			// 
-			this.adminPanelItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-			this.adminPanelItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-			this.adminPanelItem.Name = "adminPanelItem";
-			this.adminPanelItem.Size = new System.Drawing.Size(201, 22);
-			this.adminPanelItem.Text = "Панель адміністратора";
-			// 
 			// adminDatabaseItem
 			// 
 			this.adminDatabaseItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
 			this.adminDatabaseItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewDB,
-            this.toolStripMenuItem1,
-            this.connectDatabase,
-            this.disconnectDatabase});
+            this.createNewDB});
 			this.adminDatabaseItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.adminDatabaseItem.Name = "adminDatabaseItem";
-			this.adminDatabaseItem.Size = new System.Drawing.Size(201, 22);
+			this.adminDatabaseItem.Size = new System.Drawing.Size(180, 22);
 			this.adminDatabaseItem.Text = "База даних";
 			// 
 			// createNewDB
@@ -214,35 +198,9 @@
 			this.createNewDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
 			this.createNewDB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.createNewDB.Name = "createNewDB";
-			this.createNewDB.Size = new System.Drawing.Size(155, 22);
+			this.createNewDB.Size = new System.Drawing.Size(180, 22);
 			this.createNewDB.Text = "Створити нову";
 			this.createNewDB.Click += new System.EventHandler(this.createNewDB_Click);
-			// 
-			// toolStripMenuItem1
-			// 
-			this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-			this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-			this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 6);
-			// 
-			// connectDatabase
-			// 
-			this.connectDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-			this.connectDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-			this.connectDatabase.Name = "connectDatabase";
-			this.connectDatabase.Size = new System.Drawing.Size(155, 22);
-			this.connectDatabase.Text = "Підключитись";
-			this.connectDatabase.Click += new System.EventHandler(this.connectDatabase_Click);
-			// 
-			// disconnectDatabase
-			// 
-			this.disconnectDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-			this.disconnectDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-			this.disconnectDatabase.Name = "disconnectDatabase";
-			this.disconnectDatabase.Size = new System.Drawing.Size(155, 22);
-			this.disconnectDatabase.Text = "Відключитсь";
-			this.disconnectDatabase.Click += new System.EventHandler(this.disconnectDatabase_Click);
 			// 
 			// crownContextMenuStrip1
 			// 
@@ -295,16 +253,12 @@
 		private System.Windows.Forms.ToolStripStatusLabel connectionStatus;
 		private System.Windows.Forms.ToolStripMenuItem допомогаToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem createNewDB;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem connectDatabase;
-		private System.Windows.Forms.ToolStripMenuItem disconnectDatabase;
 		private System.Windows.Forms.ToolStripMenuItem проПрограмуToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem вікноToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem queriesWindow;
 		private System.Windows.Forms.ToolStripMenuItem showGreetingTab;
 		private System.Windows.Forms.ToolStripMenuItem accountWindow;
 		private System.Windows.Forms.ToolStripMenuItem adminMenu;
-		private System.Windows.Forms.ToolStripMenuItem adminPanelItem;
 		private System.Windows.Forms.ToolStripMenuItem adminDatabaseItem;
 	}
 }

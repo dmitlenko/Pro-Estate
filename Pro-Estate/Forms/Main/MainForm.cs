@@ -49,8 +49,6 @@ namespace Pro_Estate
 		private void BuildWindowMenu()
 		{
 			connectionStatus.Text = IsDBConnected ? "Підключено" : "Відключено";
-			connectDatabase.Enabled = !IsDBConnected;
-			disconnectDatabase.Enabled = IsDBConnected;
 
 			queriesWindow.Checked = DockPanel.Contains(_dockActions);
 			accountWindow.Checked = DockPanel.Contains(_dockAccount);
@@ -67,13 +65,6 @@ namespace Pro_Estate
 		{
 			new DatabaseWizard().ShowDialog();
 
-			BuildWindowMenu();
-		}
-
-		private void disconnectDatabase_Click(object sender, EventArgs e)
-		{
-			if (IsDBConnected)
-				Database.Connection.Close();
 			BuildWindowMenu();
 		}
 
@@ -122,13 +113,6 @@ namespace Pro_Estate
 				DockPanel.AddContent(toolWindow);
 			else
 				DockPanel.RemoveContent(toolWindow);
-		}
-
-		private void connectDatabase_Click(object sender, EventArgs e)
-		{
-			if (!IsDBConnected)
-				Database.Connection.Open();
-			BuildWindowMenu();
 		}
 
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
