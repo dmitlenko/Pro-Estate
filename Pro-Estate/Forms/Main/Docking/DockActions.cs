@@ -1,13 +1,15 @@
 ﻿using Pro_Estate.Core.Database;
-using Pro_Estate.Core.Database.Queries;
 using Pro_Estate.Core.Database.Base;
+using Pro_Estate.Core.Database.Queries;
 using Pro_Estate.Core.Database.Tables;
 using ReaLTaiizor.Controls;
 using ReaLTaiizor.Docking.Crown;
 using ReaLTaiizor.Util;
-using System.Collections.Generic;
-using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Pro_Estate.Forms.Main.Docking
 {
@@ -33,9 +35,9 @@ namespace Pro_Estate.Forms.Main.Docking
 			FillNodes(Queries.Reports(Database), reportNodes);
 			FillNodes(Queries.Scripts(Database), scriptNodes);
 
-			queriesTree.Nodes.Add(new CrownTreeNode { Text = "Таблиці", Nodes = tablesNodes, Icon = Properties.Resources.table });
-			queriesTree.Nodes.Add(new CrownTreeNode { Text = "Звіти", Nodes = reportNodes, Icon = Properties.Resources.report_green });
-			queriesTree.Nodes.Add(new CrownTreeNode { Text = "Запити", Nodes = scriptNodes, Icon = Properties.Resources.query_design });
+			AddNode("Таблиці", tablesNodes, Properties.Resources.table);
+			AddNode("Звіти", reportNodes, Properties.Resources.report_green);
+			AddNode("Запити", scriptNodes, Properties.Resources.query_design);
 
 			foreach (var node in queriesTree.Nodes)
 				node.Expanded = true;
@@ -53,6 +55,17 @@ namespace Pro_Estate.Forms.Main.Docking
 						Tag = item
 					});
 			}
+		}
+
+		private void AddNode(string name, ObservableList<CrownTreeNode> nodes, Bitmap icon)
+		{
+			if (nodes.Any())
+				queriesTree.Nodes.Add(new CrownTreeNode
+				{
+					Text = name,
+					Nodes = nodes,
+					Icon = icon
+				});
 		}
 
 		private void queriesTree_MouseUp(object sender, MouseEventArgs e)
