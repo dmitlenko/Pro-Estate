@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace Pro_Estate.Forms.DataEntry.Controls
 {
 	public partial class HumanEntry<T> : UserControl, IEntryData<T>
-		where T : class, IHumanData, IIdentifable, new()
+		where T : class, IHumanData, new()
 	{
 		private ProEstateDatabase Database { get; set; }
 		private T Value { get; set; }

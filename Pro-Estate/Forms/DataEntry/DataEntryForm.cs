@@ -14,7 +14,7 @@ using System.Windows.Forms;
 namespace Pro_Estate.Forms.DataEntry
 {
 	public partial class DataEntryForm<T> : CrownForm
-		where T : class, IIdentifable
+		where T : class
 	{
 		private EntryAction Action { get; set; }
 		private T Value { get; set; }

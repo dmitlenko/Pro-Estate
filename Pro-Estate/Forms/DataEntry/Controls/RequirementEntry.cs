@@ -9,7 +9,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 namespace Pro_Estate.Forms.DataEntry.Controls
 {
 	public partial class RequirementEntry<T> : UserControl, IEntryData<T>
-		where T : Requirement, IIdentifable, new()
+		where T : Requirement, new()
 	{
 		private ProEstateDatabase Database { get; set; }
 		private T Value { get; set; }

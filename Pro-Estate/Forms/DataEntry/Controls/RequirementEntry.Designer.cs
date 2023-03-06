@@ -4,7 +4,7 @@ using Pro_Estate.Core.Database.Tables;
 namespace Pro_Estate.Forms.DataEntry.Controls
 {
 	partial class RequirementEntry<T>
-		where T : Requirement, IIdentifable, new()
+		where T : Requirement, new()
 	{
 		/// <summary> 
 		/// Required designer variable.

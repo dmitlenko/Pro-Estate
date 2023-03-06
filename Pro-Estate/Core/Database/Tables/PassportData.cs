@@ -5,7 +5,7 @@ using System.Data.Linq.Mapping;
 namespace Pro_Estate.Core.Database.Tables
 {
 	[Table(Name = "PassportData")]
-	public class PassportData : IIdentifable
+	public class PassportData
 	{
 		[Column(IsPrimaryKey = true, IsDbGenerated = true)]
 		public int Id { get; set; }

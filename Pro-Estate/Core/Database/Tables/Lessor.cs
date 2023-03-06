@@ -5,7 +5,7 @@ using System.Data.Linq.Mapping;
 namespace Pro_Estate.Core.Database.Tables
 {
 	[Table(Name = "Lessee")]
-	public class Lessor : IIdentifable, IHumanData
+	public class Lessor : IHumanData
 	{
 		private EntityRef<PassportData> _passportData = new EntityRef<PassportData>();
 

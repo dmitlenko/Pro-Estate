@@ -7,7 +7,7 @@ using System.Text;
 namespace Pro_Estate.Core.Database.Tables
 {
 	[Table(Name = "Account")]
-	public class Account: IIdentifable
+	public class Account
 	{
 		[Column(IsDbGenerated = true, IsPrimaryKey = true, CanBeNull = false)]
 		public int Id { get; set; }

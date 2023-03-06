@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Pro_Estate.Core.Database.Base
 {
 	public interface IEntryData<T>
-		where T : class, IIdentifable
+		where T : class
 	{
 		bool CheckFields();
 		T GetValue();

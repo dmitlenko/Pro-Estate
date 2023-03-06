@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Pro_Estate.Forms.Main.Docking
 {
 	public partial class DockTable<T> : CrownDocument
-		where T : class, IIdentifable, new()
+		where T : class, new()
 	{
 		private QueryResult<T> Result { get; set; }
 		private ATableQuery<T> Query { get; set; }

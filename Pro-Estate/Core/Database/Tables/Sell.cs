@@ -6,7 +6,7 @@ using System.Data.Linq.Mapping;
 namespace Pro_Estate.Core.Database.Tables
 {
 	[Table(Name = "Sell")]
-	public class Sell : IIdentifable
+	public class Sell
 	{
 		private EntityRef<Apartment> _apartment = new EntityRef<Apartment>();
 		private EntityRef<Customer> _client = new EntityRef<Customer>();

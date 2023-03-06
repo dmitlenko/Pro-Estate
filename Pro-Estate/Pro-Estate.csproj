@@ -89,7 +89,6 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Core\Database\Base\IHumanData.cs" />
-    <Compile Include="Core\Database\Base\IIdentifable.cs" />
     <Compile Include="Core\Database\Queries\Queries.cs" />
     <Compile Include="Core\Database\Base\QueryResult.cs" />
     <Compile Include="Core\Database\Base\AReportQuery.cs" />

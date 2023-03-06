@@ -4,7 +4,7 @@ using Pro_Estate.Core.Database.Tables;
 namespace Pro_Estate.Forms.DataEntry.Controls
 {
 	partial class RentEntry<T>
-		where T : Rent, IIdentifable, new()
+		where T : Rent, new()
 	{
 		/// <summary> 
 		/// Required designer variable.

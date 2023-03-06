@@ -13,7 +13,7 @@ namespace Pro_Estate.Core.Database.Tables
 	}
 
 	[Table(Name = "Apartment")]
-	public class Apartment : IIdentifable
+	public class Apartment
 	{
 		private EntityRef<Lessor> _lessee = new EntityRef<Lessor>();
 

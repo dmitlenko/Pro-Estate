@@ -3,7 +3,7 @@
 namespace Pro_Estate.Forms.DataEntry
 {
 	partial class DataEntryForm<T>
-		where T : class, IIdentifable
+		where T : class
 	{
 		/// <summary>
 		/// Required designer variable.
