@@ -1,6 +1,7 @@
 ﻿using Pro_Estate.Core.Database;
 using Pro_Estate.Core.Database.Tables;
 using Pro_Estate.Forms.Main.Docking;
+using Pro_Estate.Forms.Screens;
 using Pro_Estate.Forms.Wizards;
 using ReaLTaiizor.Docking.Crown;
 using ReaLTaiizor.Forms;
@@ -19,6 +20,7 @@ namespace Pro_Estate
 		private DockAccount _dockAccount;
 		private DockActions _dockActions;
 		private DockBrowser _greetingTab;
+		private DockBrowser _tutorialTab;
 		private WindowStateInfo _windowStateInfo;
 
 		private List<CrownDockContent> _toolWindows = new List<CrownDockContent>();
@@ -87,6 +89,7 @@ namespace Pro_Estate
 			_dockActions = new DockActions(DockPanel, Database, Account.Level);
 			_dockAccount = new DockAccount(Account);
 			_greetingTab = new DockBrowser("Ласкаво просимо", Properties.Resources.pro_estate_greeting);
+			_tutorialTab = new DockBrowser("Інструкція користувача", null, Properties.Resources.installer_box, false, $"file:///{Application.StartupPath}/Resources/tutorial.mht");
 
 			_toolWindows.Add(_dockActions);
 			_toolWindows.Add(_greetingTab);
@@ -151,6 +154,16 @@ namespace Pro_Estate
 					WindowState = _windowStateInfo.WindowState;
 				}
 			}
+		}
+
+		private void проПрограмуToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new AboutScreen().ShowDialog();
+		}
+
+		private void instructionItem_Click(object sender, EventArgs e)
+		{
+			DockPanel.AddContent(_tutorialTab);
 		}
 	}
 

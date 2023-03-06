@@ -200,6 +200,12 @@
     <Compile Include="Forms\Main\Docking\DockScript.Designer.cs">
       <DependentUpon>DockScript.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Screens\AboutScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Screens\AboutScreen.Designer.cs">
+      <DependentUpon>AboutScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Screens\ExceptionScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     <EmbeddedResource Include="Forms\Main\Docking\DockScript.resx">
       <DependentUpon>DockScript.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Screens\AboutScreen.resx">
+      <DependentUpon>AboutScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Screens\ExceptionScreen.resx">
       <DependentUpon>ExceptionScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +350,10 @@
   <ItemGroup>
     <Content Include="building.ico" />
     <None Include="Resources\chart_pie_title.png" />
+    <None Include="Resources\installer_box.png" />
+    <Content Include="Resources\tutorial.mht">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\table_chart.png" />
     <None Include="Resources\chart_column_up.png" />
     <None Include="Resources\user_suit_add.png" />
