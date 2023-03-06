@@ -44,6 +44,7 @@ namespace Pro_Estate.Core.Database.Queries
 				new LesseeReportScript (database),
 				new PeriodSellsReportScript (database),
 				new CustomerRequirementScript (database),
+				new CustomerRegisterScript (database),
 			}.OrderBy(x => x.Name));
 		}
 	}
