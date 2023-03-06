@@ -54,7 +54,7 @@ namespace Pro_Estate.Core.Database.Queries
 		{
 			return new List<AChartQuery>(new AChartQuery[]
 			{
-				new SellsChart {Database = database},
+				new MonthlySellsChart {Database = database},
 			}.OrderBy(x => x.Name));
 		}
 	}

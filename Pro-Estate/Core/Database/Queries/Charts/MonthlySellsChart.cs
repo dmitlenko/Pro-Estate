@@ -12,7 +12,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Pro_Estate.Core.Database.Queries.Charts
 {
-	public class SellsChart : AChartQuery
+	public class MonthlySellsChart : AChartQuery
 	{
 		public override string Name => "Статистика з продаж";
 		public override string Description => "Статистика продаж за місяць";
