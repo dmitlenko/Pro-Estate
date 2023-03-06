@@ -44,7 +44,7 @@ namespace Pro_Estate.Core.Database.Queries.Scripts
 		public override string Description => "Цей запит надає змогу створити новий обліковий запис орендодавця.";
 
 		public override Bitmap Icon => Properties.Resources.user_suit_add;
-		public override AccountLevel MinViewLevel => AccountLevel.Customer;
+		public override AccountLevel MinViewLevel => AccountLevel.Lessor;
 		public override ControlCollection Controls { get => _collection; set => _collection = value; }
 
 		public override void Prepare()
