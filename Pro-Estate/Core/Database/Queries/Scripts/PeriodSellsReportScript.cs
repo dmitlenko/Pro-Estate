@@ -78,8 +78,8 @@ namespace Pro_Estate.Core.Database.Queries.Scripts
 						Name,
 						HTMLHelper.SummaryTable(new KeyValuePair<string, object>[]
 						{
-							new KeyValuePair<string, object>($"Початок відрізку", fromDate.Value),
-							new KeyValuePair<string, object>($"Кінець відрізку", toDate.Value),
+							new KeyValuePair<string, object>($"Початок відрізку", fromDate.Value.ToString("dd.MM.yyyy")),
+							new KeyValuePair<string, object>($"Кінець відрізку", toDate.Value.ToString("dd.MM.yyyy")),
 						}),
 						HTMLHelper.ColumnsToHeaders(table.Columns),
 						HTMLHelper.RowsToHTML(table.Rows),
