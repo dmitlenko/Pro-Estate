@@ -1,4 +1,5 @@
 ﻿using Pro_Estate.Core.Database.Base;
+using Pro_Estate.Core.Database.Queries.Charts;
 using Pro_Estate.Core.Database.Queries.Reports;
 using Pro_Estate.Core.Database.Queries.Scripts;
 using Pro_Estate.Core.Database.Queries.Tables;
@@ -46,6 +47,14 @@ namespace Pro_Estate.Core.Database.Queries
 				new CustomerRequirementScript (database),
 				new CustomerRegisterScript (database),
 				new LessorRegisterScript (database),
+			}.OrderBy(x => x.Name));
+		}
+
+		public static List<AChartQuery> Charts(ProEstateDatabase database)
+		{
+			return new List<AChartQuery>(new AChartQuery[]
+			{
+				new SellsChart {Database = database},
 			}.OrderBy(x => x.Name));
 		}
 	}

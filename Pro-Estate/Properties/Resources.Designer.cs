@@ -103,6 +103,16 @@ namespace Pro_Estate.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap chart_column_up {
+            get {
+                object obj = ResourceManager.GetObject("chart_column_up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap client_account_template {
             get {
                 object obj = ResourceManager.GetObject("client_account_template", resourceCulture);
@@ -424,6 +434,16 @@ namespace Pro_Estate.Properties {
             get {
                 object obj = ResourceManager.GetObject("table_add", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap table_chart {
+            get {
+                object obj = ResourceManager.GetObject("table_chart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

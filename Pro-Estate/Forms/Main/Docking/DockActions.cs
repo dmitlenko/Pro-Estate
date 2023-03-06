@@ -18,6 +18,7 @@ namespace Pro_Estate.Forms.Main.Docking
 		private readonly ObservableList<CrownTreeNode> tablesNodes = new ObservableList<CrownTreeNode>();
 		private readonly ObservableList<CrownTreeNode> reportNodes = new ObservableList<CrownTreeNode>();
 		private readonly ObservableList<CrownTreeNode> scriptNodes = new ObservableList<CrownTreeNode>();
+		private readonly ObservableList<CrownTreeNode> chartNodes = new ObservableList<CrownTreeNode>();
 
 		private CrownDockPanel Panel { get; set; }
 
@@ -34,10 +35,12 @@ namespace Pro_Estate.Forms.Main.Docking
 			FillNodes(Queries.Tables(Database), tablesNodes);
 			FillNodes(Queries.Reports(Database), reportNodes);
 			FillNodes(Queries.Scripts(Database), scriptNodes);
+			FillNodes(Queries.Charts(Database), chartNodes);
 
 			AddNode("Таблиці", tablesNodes, Properties.Resources.table);
 			AddNode("Звіти", reportNodes, Properties.Resources.report_green);
 			AddNode("Запити", scriptNodes, Properties.Resources.query_design);
+			AddNode("Діаграми", chartNodes, Properties.Resources.table_chart);
 
 			foreach (var node in queriesTree.Nodes)
 				node.Expanded = true;
@@ -83,6 +86,10 @@ namespace Pro_Estate.Forms.Main.Docking
 
 					case ABaseScript bs:
 						crownDocument = new DockScript((ABaseScript)Activator.CreateInstance(bs.GetType(), Database));
+						break;
+
+					case AChartQuery cq:
+						crownDocument = new DockChart(cq);
 						break;
 
 					case ATableQuery<Account> table:

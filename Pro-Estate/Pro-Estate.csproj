@@ -75,6 +75,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,7 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Core\Database\Base\AChartQuery.cs" />
     <Compile Include="Core\Database\Base\IHumanData.cs" />
+    <Compile Include="Core\Database\Queries\Charts\SellsChart.cs" />
     <Compile Include="Core\Database\Queries\Queries.cs" />
     <Compile Include="Core\Database\Base\QueryResult.cs" />
     <Compile Include="Core\Database\Base\AReportQuery.cs" />
@@ -183,6 +186,12 @@
     <Compile Include="Forms\Main\Docking\DockAccount.Designer.cs">
       <DependentUpon>DockAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main\Docking\DockChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docking\DockChart.Designer.cs">
+      <DependentUpon>DockChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main\Docking\DockScript.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -260,6 +269,9 @@
     <EmbeddedResource Include="Forms\Main\Docking\DockAccount.resx">
       <DependentUpon>DockAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Docking\DockChart.resx">
+      <DependentUpon>DockChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\Docking\DockScript.resx">
       <DependentUpon>DockScript.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +338,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="building.ico" />
+    <None Include="Resources\table_chart.png" />
+    <None Include="Resources\chart_column_up.png" />
     <None Include="Resources\user_suit_add.png" />
     <None Include="Resources\user_add.png" />
     <None Include="Resources\to_do_list.png" />

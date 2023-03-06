@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Pro_Estate.Core.Helpers
 {
@@ -77,6 +78,17 @@ namespace Pro_Estate.Core.Helpers
 					targetField.SetValue(targetObject, value);
 				}
 			}
+		}
+
+		public static Series ChartSeries(string name, string xValueMember, string yValueMember)
+		{
+			return new Series
+			{
+				Name = name,
+				LegendText = name,
+				XValueMember = xValueMember,
+				YValueMembers = yValueMember
+			};
 		}
 	}
 }
