@@ -91,6 +91,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Core\Database\Base\AChartQuery.cs" />
     <Compile Include="Core\Database\Base\IHumanData.cs" />
+    <Compile Include="Core\Database\Queries\Charts\MonthlyIncomeChart.cs" />
     <Compile Include="Core\Database\Queries\Charts\MonthlyRentChart.cs" />
     <Compile Include="Core\Database\Queries\Charts\MonthlySellsChart.cs" />
     <Compile Include="Core\Database\Queries\Queries.cs" />

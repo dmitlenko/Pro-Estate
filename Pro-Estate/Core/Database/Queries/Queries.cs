@@ -56,6 +56,7 @@ namespace Pro_Estate.Core.Database.Queries
 			{
 				new MonthlySellsChart {Database = database},
 				new MonthlyRentChart {Database = database},
+				new MonthlyIncomeChart {Database = database},
 			}.OrderBy(x => x.Name));
 		}
 	}
