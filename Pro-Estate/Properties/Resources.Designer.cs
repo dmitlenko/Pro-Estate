@@ -500,6 +500,16 @@ namespace Pro_Estate.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap user_suit_add {
+            get {
+                object obj = ResourceManager.GetObject("user_suit_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap users_5 {
             get {
                 object obj = ResourceManager.GetObject("users_5", resourceCulture);
