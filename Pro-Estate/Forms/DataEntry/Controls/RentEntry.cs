@@ -22,19 +22,23 @@ namespace Pro_Estate.Forms.DataEntry.Controls
 
 			PrepareFields();
 
-			if (item != null)
+			if (Database.Rents.Any(x => x == item))
 			{
 				client.SelectedItem = Value.Client;
 				apartment.SelectedItem = Value.Apartment;
 				employee.SelectedItem = Value.Employee;
 				price.Value = (decimal)Value.Price;
-
-				if (Value.DateStart != Value.DateEnd)
-				{
-					startDate.Value = Value.DateStart;
-					endDate.Value = Value.DateEnd;
-				}
+				startDate.Value = Value.DateStart;
+				endDate.MinDate = Value.DateStart.AddMonths(1).AddHours(-1);
+				endDate.Value = Value.DateEnd;
 			}
+
+			PrepareDates();
+		}
+
+		private void PrepareDates()
+		{
+			
 		}
 
 		private void PrepareFields()
@@ -42,9 +46,8 @@ namespace Pro_Estate.Forms.DataEntry.Controls
 			apartment.Items.AddRange(Database.Apartments.ToArray());
 			client.Items.AddRange(Database.Customers.ToArray());
 			employee.Items.AddRange(Database.Employees.ToArray());
-			startDate.MinDate = Value.DateStart;
-			endDate.MinDate = startDate.Value.AddMonths(1);
 			price.Maximum = int.MaxValue;
+			endDate.MinDate = startDate.Value.AddMonths(1);
 		}
 
 		private void CalculatePrice()
@@ -72,7 +75,8 @@ namespace Pro_Estate.Forms.DataEntry.Controls
 			if (apartment.SelectedItem == null) return false;
 			if (client.SelectedItem == null) return false;
 			if (employee.SelectedItem == null) return false;
-			if (Database.Rents.Any(x => x.Apartment == apartment.SelectedItem && x.Client == client.SelectedItem && x.DateEnd >= DateTime.Now)) return false;
+			if (!Database.Rents.Any(x => x == Value))
+				if (Database.Rents.Any(x => x.Apartment == apartment.SelectedItem && x.Client == client.SelectedItem && x.DateEnd >= DateTime.Now)) return false;
 
 			return true;
 		}
