@@ -82,7 +82,7 @@ namespace Pro_Estate
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			adminMenu.Enabled = Account.Level == AccountLevel.Admin;
+			adminMenu.Visible = Account.Level == AccountLevel.Admin;
 
 			_dockActions = new DockActions(DockPanel, Database, Account.Level);
 			_dockAccount = new DockAccount(Account);
