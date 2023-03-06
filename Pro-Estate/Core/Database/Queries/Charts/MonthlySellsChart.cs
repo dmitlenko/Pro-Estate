@@ -28,7 +28,7 @@ namespace Pro_Estate.Core.Database.Queries.Charts
 			return DatabaseHelper.LINQResultToDataTable(values);
 		}
 
-		public override List<Series> GetSeries()
+		public override List<Series> GetSeries(Chart chart)
 		{
 			return new List<Series>
 			{

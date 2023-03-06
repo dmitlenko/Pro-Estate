@@ -80,14 +80,15 @@ namespace Pro_Estate.Core.Helpers
 			}
 		}
 
-		public static Series ChartSeries(string name, string xValueMember, string yValueMember)
+		public static Series ChartSeries(string name, string xValueMember, string yValueMember, SeriesChartType seriesChartType = SeriesChartType.Column)
 		{
 			return new Series
 			{
 				Name = name,
 				LegendText = name,
 				XValueMember = xValueMember,
-				YValueMembers = yValueMember
+				YValueMembers = yValueMember,
+				ChartType = seriesChartType,
 			};
 		}
 	}

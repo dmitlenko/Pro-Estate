@@ -1,6 +1,5 @@
 ﻿using Pro_Estate.Core.Database.Base;
 using Pro_Estate.Core.Database.Tables;
-using Pro_Estate.Core.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,35 +11,39 @@ namespace Pro_Estate.Core.Database.Queries.Charts
 {
 	public class MonthlyIncomeChart : AChartQuery
 	{
+		private string[] xAxisData = { "Продажі", "Оренди" };
+		private double[] yAxisData;
 		public override string Name => "Статистика з заробітку";
 		public override string Description => "Статистика заробітку за місяць";
-		public override Bitmap Icon => Properties.Resources.chart_column_up;
+		public override Bitmap Icon => Properties.Resources.chart_pie_title;
 		public override AccountLevel MinViewLevel => AccountLevel.Customer;
-
-		private class ResultRow
-		{
-			public DateTime Date { get; set; }
-			public double Price { get; set; }
-		}
 
 		public override DataTable GetDataTable()
 		{
-			var minDate = DateTime.Today.AddMonths(-1);
-			var values = from s in Database.Sells
-						 where s.Date > minDate
-						 select new ResultRow { Date = s.Date, Price = s.Price };
-			values.Concat(from s in Database.Rents
-						  where s.DateStart > minDate
-						  select new ResultRow { Date = s.DateStart, Price = s.Price });
-			return DatabaseHelper.LINQResultToDataTable(values);
+			return new DataTable();
 		}
 
-		public override List<Series> GetSeries()
+		public override List<Series> GetSeries(Chart chart)
 		{
-			return new List<Series>
-			{
-				DatabaseHelper.ChartSeries("Оренда", "Date", "Price")
-			};
+			Series ser = new Series { ChartType = SeriesChartType.Pie };
+			var minDate = DateTime.Today.AddMonths(-1);
+
+			double sellValue = (from s in Database.Sells
+								where s.Date > minDate
+								select s.Price).Sum() * Constants.IncomePercent;
+
+			double rentValue = (from s in Database.Rents
+								where s.DateStart > minDate
+								select s.Price).Sum() * Constants.IncomePercent;
+
+			double sellPercent = sellValue / (sellValue + rentValue);
+			double rentPercent = rentValue / (sellValue + rentValue);
+
+			yAxisData = new double[] { sellPercent, rentPercent };
+
+			ser.Points.DataBindXY(xAxisData, yAxisData);
+
+			return new List<Series> { ser };
 		}
 	}
 }

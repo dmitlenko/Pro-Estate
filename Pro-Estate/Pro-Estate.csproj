@@ -340,6 +340,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="building.ico" />
+    <None Include="Resources\chart_pie_title.png" />
     <None Include="Resources\table_chart.png" />
     <None Include="Resources\chart_column_up.png" />
     <None Include="Resources\user_suit_add.png" />

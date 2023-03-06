@@ -10,7 +10,7 @@ namespace Pro_Estate.Core.Database.Base
 {
 	public abstract class AChartQuery: ABaseQuery
 	{
-		public abstract List<Series> GetSeries();
+		public abstract List<Series> GetSeries(Chart chart);
 		public abstract DataTable GetDataTable();
 	}
 }

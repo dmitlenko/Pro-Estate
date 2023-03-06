@@ -26,11 +26,25 @@ namespace Pro_Estate.Forms.Main.Docking
 			Icon = Query.Icon;
 
 			chart.Titles.Add(Query.Name);
-			chart.Titles.Add(Query.Description);
 			chart.Palette = ChartColorPalette.Excel;
-			chart.Series.Clear();
-			Query.GetSeries().ForEach(x => chart.Series.Add(x));
+			PrepareChartLook();
 			chart.DataSource = Query.GetDataTable();
+		}
+
+		private void PrepareChartLook()
+		{
+			chart.Series.Clear();
+			Query.GetSeries(chart).ForEach(x => chart.Series.Add(x));
+
+			chart.Legends.Clear();
+			chart.Legends.Add(new Legend
+			{
+				LegendStyle = LegendStyle.Table,
+				Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom,
+				Alignment = StringAlignment.Center,
+				Title = Query.Description,
+				BorderColor = Color.Black
+			});
 		}
 	}
 }
