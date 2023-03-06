@@ -17,6 +17,8 @@ namespace Pro_Estate.Core.Database.Queries.Reports
 		public override string Description { get => "Звіт про вимоги клієнтів надає статистику про вимоги від клієнтів"; }
 		public override bool Editable { get => false; }
 
+		public override AccountLevel MinViewLevel => AccountLevel.Lessor;
+
 		private class ResultRow
 		{
 			public Customer Customer { get; set; }
