@@ -1,5 +1,6 @@
 ﻿using Pro_Estate.Core.Database;
 using Pro_Estate.Core.Database.Tables;
+using Pro_Estate.Core.Helpers;
 using Pro_Estate.Forms.Main.Docking;
 using Pro_Estate.Forms.Screens;
 using Pro_Estate.Forms.Wizards;
@@ -164,6 +165,21 @@ namespace Pro_Estate
 		private void instructionItem_Click(object sender, EventArgs e)
 		{
 			DockPanel.AddContent(_tutorialTab);
+		}
+
+		private void selectDBItem_Click(object sender, EventArgs e)
+		{
+			if (dbOpen.ShowDialog() == DialogResult.OK && File.Exists(dbOpen.FileName))
+			{
+				Database.Connection.Close();
+				Properties.Settings.Default["ConnectionString"] = DatabaseHelper.ConstructConnectionString(dbOpen.FileName);
+				Properties.Settings.Default.Save();
+
+				Database.Connection.ConnectionString = Properties.Settings.Default.ConnectionString;
+				Database.Connection.Open();
+
+				BuildWindowMenu();
+			}
 		}
 	}
 

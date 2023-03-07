@@ -39,13 +39,15 @@
 			this.accountWindow = new System.Windows.Forms.ToolStripMenuItem();
 			this.допомогаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.showGreetingTab = new System.Windows.Forms.ToolStripMenuItem();
+			this.instructionItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.проПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.adminMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.adminDatabaseItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.createNewDB = new System.Windows.Forms.ToolStripMenuItem();
 			this.crownContextMenuStrip1 = new ReaLTaiizor.Controls.CrownContextMenuStrip();
 			this.DockPanel = new ReaLTaiizor.Docking.Crown.CrownDockPanel();
-			this.instructionItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.selectDBItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.dbOpen = new System.Windows.Forms.OpenFileDialog();
 			this.stausStrip.SuspendLayout();
 			this.crownMenuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -163,16 +165,25 @@
 			this.showGreetingTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
 			this.showGreetingTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.showGreetingTab.Name = "showGreetingTab";
-			this.showGreetingTab.Size = new System.Drawing.Size(180, 22);
+			this.showGreetingTab.Size = new System.Drawing.Size(154, 22);
 			this.showGreetingTab.Text = "Привітання";
 			this.showGreetingTab.Click += new System.EventHandler(this.showGreetingTab_Click);
+			// 
+			// instructionItem
+			// 
+			this.instructionItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+			this.instructionItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+			this.instructionItem.Name = "instructionItem";
+			this.instructionItem.Size = new System.Drawing.Size(154, 22);
+			this.instructionItem.Text = "Інструкція";
+			this.instructionItem.Click += new System.EventHandler(this.instructionItem_Click);
 			// 
 			// проПрограмуToolStripMenuItem
 			// 
 			this.проПрограмуToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
 			this.проПрограмуToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.проПрограмуToolStripMenuItem.Name = "проПрограмуToolStripMenuItem";
-			this.проПрограмуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.проПрограмуToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
 			this.проПрограмуToolStripMenuItem.Text = "Про програму";
 			this.проПрограмуToolStripMenuItem.Click += new System.EventHandler(this.проПрограмуToolStripMenuItem_Click);
 			// 
@@ -190,10 +201,11 @@
 			// 
 			this.adminDatabaseItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
 			this.adminDatabaseItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewDB});
+            this.createNewDB,
+            this.selectDBItem});
 			this.adminDatabaseItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.adminDatabaseItem.Name = "adminDatabaseItem";
-			this.adminDatabaseItem.Size = new System.Drawing.Size(133, 22);
+			this.adminDatabaseItem.Size = new System.Drawing.Size(180, 22);
 			this.adminDatabaseItem.Text = "База даних";
 			// 
 			// createNewDB
@@ -201,7 +213,7 @@
 			this.createNewDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
 			this.createNewDB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.createNewDB.Name = "createNewDB";
-			this.createNewDB.Size = new System.Drawing.Size(155, 22);
+			this.createNewDB.Size = new System.Drawing.Size(180, 22);
 			this.createNewDB.Text = "Створити нову";
 			this.createNewDB.Click += new System.EventHandler(this.createNewDB_Click);
 			// 
@@ -223,14 +235,18 @@
 			this.DockPanel.ContentAdded += new System.EventHandler<ReaLTaiizor.Docking.Crown.DockContentEventArgs>(this.DockPanel_ContentAdded);
 			this.DockPanel.ContentRemoved += new System.EventHandler<ReaLTaiizor.Docking.Crown.DockContentEventArgs>(this.DockPanel_ContentRemoved);
 			// 
-			// instructionItem
+			// selectDBItem
 			// 
-			this.instructionItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-			this.instructionItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-			this.instructionItem.Name = "instructionItem";
-			this.instructionItem.Size = new System.Drawing.Size(180, 22);
-			this.instructionItem.Text = "Інструкція";
-			this.instructionItem.Click += new System.EventHandler(this.instructionItem_Click);
+			this.selectDBItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+			this.selectDBItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+			this.selectDBItem.Name = "selectDBItem";
+			this.selectDBItem.Size = new System.Drawing.Size(180, 22);
+			this.selectDBItem.Text = "Вибрати існуючу";
+			this.selectDBItem.Click += new System.EventHandler(this.selectDBItem_Click);
+			// 
+			// dbOpen
+			// 
+			this.dbOpen.Filter = "Database files|*.mdf|All files|*.*";
 			// 
 			// MainForm
 			// 
@@ -273,6 +289,8 @@
 		private System.Windows.Forms.ToolStripMenuItem adminMenu;
 		private System.Windows.Forms.ToolStripMenuItem adminDatabaseItem;
 		private System.Windows.Forms.ToolStripMenuItem instructionItem;
+		private System.Windows.Forms.ToolStripMenuItem selectDBItem;
+		private System.Windows.Forms.OpenFileDialog dbOpen;
 	}
 }
 
