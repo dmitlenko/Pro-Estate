@@ -22,9 +22,9 @@ namespace Pro_Estate.Core.Database.Queries.Charts
 		public override DataTable GetDataTable()
 		{
 			var minDate = DateTime.Today.AddMonths(-1);
-			var values = from s in Database.Sells
+			var values = (from s in Database.Sells
 						 where s.Date > minDate
-						 select s;
+						 select s).OrderBy(x => x.Date);
 			return DatabaseHelper.LINQResultToDataTable(values);
 		}
 
@@ -32,7 +32,7 @@ namespace Pro_Estate.Core.Database.Queries.Charts
 		{
 			return new List<Series>
 			{
-				DatabaseHelper.ChartSeries("Продаж", "Date", "Price")
+				DatabaseHelper.ChartSeries("Продаж", "Date", "Price", SeriesChartType.Line),
 			};
 		}
 	}

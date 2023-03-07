@@ -26,16 +26,16 @@ namespace Pro_Estate.Core.Database.Queries.Charts
 		public override List<Series> GetSeries(Chart chart)
 		{
 			var minDate = DateTime.Today.AddMonths(-1);
-			values = from s in Database.Rents
+			values = (from s in Database.Rents
 					 where s.DateStart > minDate
-					 select s;
+					 select s).OrderBy(x => x.DateStart);
 
 			chart.ChartAreas[0].AxisX.Minimum = values.Select(x => x.DateStart).Min().ToOADate();
 			chart.ChartAreas[0].AxisX.Maximum = values.Select(x => x.DateStart).Max().ToOADate();
 
 			return new List<Series>
 			{
-				DatabaseHelper.ChartSeries("Оренда", "DateStart", "Price")
+				DatabaseHelper.ChartSeries("Оренда", "DateStart", "Price", SeriesChartType.Line),
 			};
 		}
 	}
