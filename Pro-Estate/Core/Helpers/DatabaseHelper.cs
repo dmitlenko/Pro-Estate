@@ -89,6 +89,7 @@ namespace Pro_Estate.Core.Helpers
 				XValueMember = xValueMember,
 				YValueMembers = yValueMember,
 				ChartType = seriesChartType,
+				BorderWidth = 2
 			};
 		}
 	}
