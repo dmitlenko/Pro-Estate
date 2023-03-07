@@ -28,16 +28,16 @@ namespace Pro_Estate.Core.Database.Queries.Charts
 			Series ser = new Series { ChartType = SeriesChartType.Pie };
 			var minDate = DateTime.Today.AddMonths(-1);
 
-			double sellValue = (from s in Database.Sells
-								where s.Date > minDate
-								select s.Price).Sum() * Constants.IncomePercent;
+			double sellValue = Database.Sells.Any() ? (from s in Database.Sells
+													   where s.Date > minDate
+													   select s.Price).Sum() * Constants.IncomePercent : 0;
 
-			double rentValue = (from s in Database.Rents
-								where s.DateStart > minDate
-								select s.Price).Sum() * Constants.IncomePercent;
+			double rentValue = Database.Rents.Any() ? (from s in Database.Rents
+													   where s.DateStart > minDate
+													   select s.Price).Sum() * Constants.IncomePercent : 0;
 
-			double sellPercent = sellValue / (sellValue + rentValue);
-			double rentPercent = rentValue / (sellValue + rentValue);
+			double sellPercent = (sellValue + rentValue) > 0 ? sellValue / (sellValue + rentValue) : 0;
+			double rentPercent = (sellValue + rentValue) > 0 ? rentValue / (sellValue + rentValue) : 0;
 
 			yAxisData = new double[] { sellPercent, rentPercent };
 
