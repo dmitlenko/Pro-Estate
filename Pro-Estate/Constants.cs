@@ -8,6 +8,6 @@ namespace Pro_Estate
 {
 	public static class Constants
 	{
-		public static double IncomePercent => 0.0125;
+		public static double IncomePercent => 0.125;
 	}
 }
