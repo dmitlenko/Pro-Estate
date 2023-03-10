@@ -1,11 +1,14 @@
 ﻿using Pro_Estate.Core.Database;
 using Pro_Estate.Core.Database.Base;
 using Pro_Estate.Core.Database.Tables;
+using Pro_Estate.Core.Helpers;
 using Pro_Estate.Forms.DataEntry;
 using ReaLTaiizor.Controls;
 using ReaLTaiizor.Docking.Crown;
 using ReaLTaiizor.Enum.Crown;
+using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Pro_Estate.Forms.Main.Docking
@@ -106,9 +109,14 @@ namespace Pro_Estate.Forms.Main.Docking
 			DialogResult result = CrownMessageBox.ShowWarning(@"Ви дійсно хочете видалити виділений рядок?", @"Видалення рядка", DialogButton.YesNo);
 			if (result == DialogResult.No || Table.SelectedItems.Count <= 0)
 				return;
-
-			Query.Table.DeleteOnSubmit(Table.SelectedItems[0].Tag as T);
-			Database.SubmitChanges();
+			try
+			{
+				Query.Table.DeleteOnSubmit(Table.SelectedItems[0].Tag as T);
+				Database.SubmitChanges();
+			} catch (System.Data.SqlClient.SqlException ex)
+			{
+				CrownMessageBox.ShowError($"Не вдалося видалити рядок, бо існує залежність від нього в іншій таблиці ({DatabaseHelper.ExtractTableName(ex)}). ", "Помилка");
+			}
 
 			RefreshTable();
 		}

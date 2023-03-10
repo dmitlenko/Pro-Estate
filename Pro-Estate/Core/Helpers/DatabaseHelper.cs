@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Pro_Estate.Core.Helpers
@@ -91,6 +92,12 @@ namespace Pro_Estate.Core.Helpers
 				ChartType = seriesChartType,
 				BorderWidth = 2
 			};
+		}
+
+		public static string ExtractTableName(SqlException ex)
+		{
+			Match match = Regex.Match(ex.Message, @"table ""dbo.(\w+)""");
+			return match.Success ? match.Groups[1].Value : string.Empty;
 		}
 	}
 }
